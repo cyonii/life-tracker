@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
+  const styles = {
+    container: {
+      width: '100wh',
+      height: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#eee',
+      padding: '18px',
+    },
+
+    text: {
+      fontFamily: 'sans-serif',
+      maginUp: 0,
+    },
+
+    subText: {
+      color: '#a9a9a9',
+      fontSize: '18px',
+      fontStyle: 'italic',
+      fontWeight: '200',
+      marginBottom: 0,
+    },
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app" style={styles.container}>
+      <h1 style={styles.text}>Life Tracker App</h1>
+      <p style={styles.subText}>Something cool is cooking...</p>
     </div>
   );
 }
