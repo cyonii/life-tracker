@@ -1,11 +1,9 @@
-// reset values for consistency with browsers
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+$primary: #489fdf;
+$secondary: #67899c;
+$success: #addc91;
 
-html {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 100%;
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  background-color: lighten($primary, 40%);
 }
