@@ -7,3 +7,19 @@ $success: #addc91;
 body {
   background-color: lighten($primary, 40%);
 }
+
+.btn,
+.btn:active,
+.btn:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.form-control {
+  border-width: 1px;
+  border-color: lighten($primary, 15%);
+}
+
+.form-control:focus {
+  border-color: $primary;
+}
