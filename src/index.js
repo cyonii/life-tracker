@@ -9,7 +9,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <ToastContainer position="bottom-left" />
+    <ToastContainer position="bottom-left" theme="colored" />
   </React.StrictMode>,
   document.getElementById('root'),
 );
