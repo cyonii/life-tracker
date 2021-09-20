@@ -4,6 +4,12 @@ import axios from 'axios';
 const BASE_URL = 'http://localhost:3000/api/v1/';
 const ACTIVITY_PATH = 'activities/';
 const RECORD_PATH = 'records/';
+const authToken = localStorage.getItem('authToken');
+
+const registerUser = async (user) => {
+  const response = await axios.post(`${BASE_URL}/users`, user);
+  return response.data;
+};
 
 const authenticateUser = async (credentials) => {
   const response = await axios.post(`${BASE_URL}auth/`, credentials);
@@ -11,21 +17,28 @@ const authenticateUser = async (credentials) => {
 };
 
 const getActivities = async () => {
-  const response = await axios.get(`${BASE_URL}${ACTIVITY_PATH}`);
+  const response = await axios.get(`${BASE_URL}${ACTIVITY_PATH}`, {
+    headers: { Authorization: `Bearer ${authToken}` },
+  });
   return response;
 };
 
 const getActivityRecords = async (activityId) => {
-  const response = await axios.get(`${BASE_URL}${ACTIVITY_PATH}${activityId}/${RECORD_PATH}`);
+  const response = await axios.get(`${BASE_URL}${ACTIVITY_PATH}${activityId}/${RECORD_PATH}`, {
+    headers: { Authorization: `Bearer ${authToken}` },
+  });
   return response;
 };
 
 const getSingleActivityRecord = async (activityId, recordId) => {
-  const response = await axios.get(`${BASE_URL}${ACTIVITY_PATH}${activityId}/${RECORD_PATH}${recordId}`);
+  const response = await axios.get(`${BASE_URL}${ACTIVITY_PATH}${activityId}/${RECORD_PATH}${recordId}`, {
+    headers: { Authorization: `Bearer ${authToken}` },
+  });
   return response;
 };
 
 export {
+  registerUser,
   authenticateUser,
   getActivities,
   getActivityRecords,
