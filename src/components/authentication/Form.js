@@ -33,7 +33,7 @@ const Form = () => {
     switch (status) {
       case 500: return 'Server error';
       case 401: return 'Invalid username or password';
-      case 422: return errorTag(`${Object.keys(data)[0]} ${data[Object.keys(data)[0]]}`);
+      case 422: return errorTag(`${Object.keys(data)[0]} ${data[Object.keys(data)[0]][0]}`);
       default: return errorTag('Something went wrong');
     }
   };
