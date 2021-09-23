@@ -27,18 +27,15 @@ const Form = () => {
   };
 
   const errorCallback = (error) => {
-    if (error.response.status >= 500) return 'Server error';
+    const { status, data } = error.response;
+    const errorTag = (text) => <p className="mb-0 lh-1 fw-light">{text}</p>;
 
-    if (error.response.status >= 400) {
-      if (formType === 'login') return 'Invalid username or password';
-
-      let message = '';
-      Object.entries(error.response.data).forEach(([key, value]) => {
-        message += `${key.toUpperCase()} ${value}.\n`;
-      });
-      return message;
+    switch (status) {
+      case 500: return 'Server error';
+      case 401: return 'Invalid username or password';
+      case 422: return errorTag(`${Object.keys(data)[0]} ${data[Object.keys(data)[0]]}`);
+      default: return errorTag('Something went wrong');
     }
-    return 'Something went wrong';
   };
 
   const handleSubmit = async (e) => {
@@ -46,17 +43,16 @@ const Form = () => {
     toast.dismiss();
     setIsDisabled(true);
 
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    const user = { email, password };
+    const { email, password } = e.target;
+    const user = { email: email.value, password: password.value };
     const callback = formType === 'login' ? authenticateUser : registerUser;
 
-    toast.promise((callback.bind(null, user)), {
+    await toast.promise((callback.bind(null, user)), {
       pending: { render: () => (formType === 'login' ? 'Logging in...' : 'Registering...') },
       success: { render: ({ data }) => successCallback(data) },
       error: { render: ({ data }) => errorCallback(data) },
-    },
-    { autoClose: false });
+    }, { autoClose: false }).catch((err) => err);
+
     setIsDisabled(false);
   };
 
@@ -64,6 +60,7 @@ const Form = () => {
     <BSForm.Group className="mb-3" controlId={name}>
       <BSForm.Label className="mb-0">{label}</BSForm.Label>
       <BSForm.Control name={name} type={type} required placeholder={label} disabled={isDisabled} />
+      { name === 'password' && <BSForm.Text className="mt-0 lh-1" muted>Must be 6 or greater</BSForm.Text> }
     </BSForm.Group>
   );
 
