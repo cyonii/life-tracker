@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Form as BSForm, Button } from 'react-bootstrap';
+import { Form as BSForm, Button, FloatingLabel } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import { registerUser, authenticateUser } from '../../backend';
 
@@ -12,7 +12,7 @@ const Form = () => {
   const toggleFormType = () => {
     setIsDisabled(false);
     setFormType(formType === 'login' ? 'register' : 'login');
-    setTitle(formType === 'login' ? 'Sign up now' : 'Login');
+    setTitle(formType === 'login' ? 'Register now' : 'Login');
     setTip(formType === 'login' ? 'Already have an account?' : 'New user?');
   };
 
@@ -56,20 +56,18 @@ const Form = () => {
     setIsDisabled(false);
   };
 
-  const formGroup = (name, label, type) => (
-    <BSForm.Group className="mb-3" controlId={name}>
-      <BSForm.Label className="mb-0">{label}</BSForm.Label>
-      <BSForm.Control name={name} type={type} required placeholder={label} disabled={isDisabled} />
-      { name === 'password' && <BSForm.Text className="mt-0 lh-1" muted>Must be 6 or greater</BSForm.Text> }
-    </BSForm.Group>
-  );
-
   return (
     <BSForm className="px-3 py-5 shadow border border-4 border-primary alert-primary rounded-2" onSubmit={handleSubmit}>
-      <h1 className="h4 fw-bold text-end">{title}</h1>
+      <h1 className="h4 fw-bold text-center mb-4">{title}</h1>
 
-      {formGroup('email', 'Email', 'email')}
-      {formGroup('password', 'Password', 'password')}
+      <FloatingLabel controlId="email" label="Email" className="text-muted mb-3">
+        <BSForm.Control name="name" type="email" placeholder="Email" required disabled={isDisabled} />
+      </FloatingLabel>
+
+      <FloatingLabel controlId="password" label="Password" className="text-muted mb-3">
+        <BSForm.Control name="name" type="password" placeholder="Passowrd" required disabled={isDisabled} minLength="6" />
+        <BSForm.Text muted>Must be 6 or greater</BSForm.Text>
+      </FloatingLabel>
 
       <Button variant="primary" className="text-white border-2 px-5 border-white" type="submit" disabled={isDisabled}>
         {formType === 'login' ? 'Login' : 'Register'}
