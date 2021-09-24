@@ -1,5 +1,5 @@
-import Authentication from './components/authentication';
-import Dashboard from './components/Dashboard';
+import Authentication from './authentication';
+import Dashboard from './Dashboard';
 
 function App() {
   // display the authentication component if the user is not logged in

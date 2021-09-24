@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import App from './App';
+import App from './components/App';
 import './assets/scss/style.scss';
 import reportWebVitals from './reportWebVitals';
 
