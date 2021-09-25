@@ -23,10 +23,10 @@ a {
 .form-control {
   border-width: 1px;
   border-color: lighten($primary, 15%);
-}
 
-.form-control:focus {
-  border-color: $primary;
+  &:focus {
+    border-color: $primary;
+  }
 }
 
 #dashboard-nav {
