@@ -6,7 +6,7 @@ $success: #addc91;
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
 body {
-  background-color: $secondary;
+  background-color: lighten($primary, 40%);
 }
 
 a {
