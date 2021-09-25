@@ -13,6 +13,22 @@ a {
   cursor: pointer;
 }
 
+.btn,
+.btn:active,
+.btn:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.form-control {
+  border-width: 1px;
+  border-color: lighten($primary, 15%);
+}
+
+.form-control:focus {
+  border-color: $primary;
+}
+
 #dashboard-nav {
   .nav-link {
     padding-right: 0.25rem !important;
@@ -46,20 +62,4 @@ a {
       }
     }
   }
-}
-
-.btn,
-.btn:active,
-.btn:focus {
-  box-shadow: none;
-  outline: none;
-}
-
-.form-control {
-  border-width: 1px;
-  border-color: lighten($primary, 15%);
-}
-
-.form-control:focus {
-  border-color: $primary;
 }
