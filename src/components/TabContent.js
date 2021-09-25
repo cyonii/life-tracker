@@ -1,12 +1,20 @@
 import Tab from 'react-bootstrap/Tab';
 
-const TabContent = () => (
-  <Tab.Content>
-    <Tab.Pane eventKey="add">Measurement Pane</Tab.Pane>
-    <Tab.Pane eventKey="detail">Detail Pane</Tab.Pane>
-    <Tab.Pane eventKey="progress">Progress Pane</Tab.Pane>
-    <Tab.Pane eventKey="more">More Pane</Tab.Pane>
-  </Tab.Content>
-);
+const TabContent = () => {
+  const pane = (eventKey, text) => (
+    <Tab.Pane eventKey={eventKey}>
+      <h3 className="h4 bg-primary text-center text-white py-2">{text}</h3>
+    </Tab.Pane>
+  );
+
+  return (
+    <Tab.Content>
+      {pane('add', 'Add measurement')}
+      {pane('detail', 'Track.it')}
+      {pane('progress', 'Progress report')}
+      {pane('more', 'More')}
+    </Tab.Content>
+  );
+};
 
 export default TabContent;
