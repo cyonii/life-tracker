@@ -73,12 +73,12 @@ const Form = () => {
         {formType === 'login' ? 'Login' : 'Register'}
       </Button>
 
-      <div className="mt-3">
-        <p className="fw-light mb-0 text-muted lh-1"><small>{tip}</small></p>
-        <Button variant="link" className="p-0 fw-light lh-1" onClick={toggleFormType}>
+      <p className="d-flex flex-wrap align-items-center fw-light mt-3 text-muted lh-1 d-">
+        <span>{tip}</span>
+        <Button variant="link" className="py-0 lh-1 fw-light" onClick={toggleFormType}>
           {formType === 'login' ? 'Sign up' : 'Login'}
         </Button>
-      </div>
+      </p>
     </BSForm>
   );
 };
