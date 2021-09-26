@@ -5,6 +5,11 @@ $success: #addc91;
 @import "~bootstrap/scss/bootstrap";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
+:root {
+  overflow: hidden;
+}
+
+html,
 body {
   background-color: lighten($primary, 40%);
 }
