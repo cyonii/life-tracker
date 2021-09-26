@@ -10,16 +10,6 @@ html {
   @include gradient-bg(shift-color($dark, $alert-bg-scale));
 }
 
-body {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-#root {
-  overflow: auto;
-}
-
 a {
   cursor: pointer;
 }
