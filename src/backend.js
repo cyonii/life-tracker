@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Authentic user
-const BASE_URL = `${process.env.REACT_APP_HOST}/api/v1`;
+const BASE_URL = `${process.env.REACT_APP_API_HOST}/api/v1`;
 const ACTIVITY_PATH = '/activities';
 const RECORD_PATH = '/records';
 const authToken = localStorage.getItem('authToken');
