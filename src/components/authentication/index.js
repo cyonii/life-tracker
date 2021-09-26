@@ -16,7 +16,7 @@ export default function Authentication() {
         <Col xs={12} md={6} lg={4} xl={3}>
           <p className="text-md-end text-muted mb-0">Welcome, human 👋</p>
           <h1 className="display-6 text-primary fw-bold">Life Tracker App</h1>
-          <p className="fst-italic text-dark fw-light lh-1">Login to see how you&apos;re doing everyday</p>
+          <p className="fst-italic text-dark fw-light lh-1">See how you&apos;re doing everyday</p>
         </Col>
 
         <Col xs={12} md={6} lg={4} xl={3}>
