@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Life Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is an application that lets users track daily activities like, exercise, sleep, work, study, etc by creating records for each activity. A particular activity can only be logged once in a day, but can be updated as needed.
 
 ## Available Scripts
 
