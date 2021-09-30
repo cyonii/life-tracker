@@ -10,9 +10,9 @@ export default function Authentication() {
   }, []);
 
   return (
-    <Container className="py-5">
-      <hr className="my-5 bg-transparent d-none d-md-block" />
-      <Row className="justify-content-center gy-5 gy-md-0">
+    <Container>
+      <Row className="justify-content-center align-items-center gy-5 gy-md-0 min-vh-100 py-5">
+        <hr className="mt-5 mb-0 bg-transparent d-none d-md-block" />
         <Col xs={12} md={6} lg={4} xl={3}>
           <p className="text-md-end text-muted mb-0">Welcome, human 👋</p>
           <h1 className="display-6 text-primary fw-bold">Life Tracker App</h1>
