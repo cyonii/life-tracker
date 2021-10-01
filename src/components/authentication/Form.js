@@ -16,7 +16,7 @@ const Form = () => {
     setTip(formType === 'login' ? 'Already have an account?' : 'New user?');
   };
 
-  const successCallback = (data) => {
+  const successCallback = ({ data }) => {
     if (formType === 'login') {
       localStorage.setItem('authToken', data.auth_token);
       setTimeout(() => window.location.reload(), 1500);
@@ -26,8 +26,8 @@ const Form = () => {
     return formType === 'login' ? 'Logged in!' : 'Registered! Login to continue.';
   };
 
-  const errorCallback = (error) => {
-    const { status, data } = error.response;
+  const errorCallback = ({ response }) => {
+    const { status, data } = response;
     const errorTag = (text) => <p className="mb-0 lh-1 fw-light">{text}</p>;
 
     switch (status) {
