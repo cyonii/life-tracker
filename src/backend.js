@@ -23,15 +23,24 @@ const getActivities = async () => {
   return response;
 };
 
-const getActivityRecords = async (activityId) => {
-  const response = await axios.get(`${BASE_URL}${ACTIVITY_PATH}/${activityId}/${RECORD_PATH}`, {
+const createRecord = async (data) => {
+  const response = await axios.post(
+    `${BASE_URL}${RECORD_PATH}`,
+    data,
+    { headers: { Authorization: `Bearer ${authToken}` } },
+  );
+  return response;
+};
+
+const getRecords = async () => {
+  const response = await axios.get(`${BASE_URL}/${RECORD_PATH}`, {
     headers: { Authorization: `Bearer ${authToken}` },
   });
   return response;
 };
 
-const getSingleActivityRecord = async (activityId, recordId) => {
-  const response = await axios.get(`${BASE_URL}${ACTIVITY_PATH}/${activityId}/${RECORD_PATH}/${recordId}`, {
+const getRecord = async (id) => {
+  const response = await axios.get(`${BASE_URL}/${RECORD_PATH}/${id}`, {
     headers: { Authorization: `Bearer ${authToken}` },
   });
   return response;
@@ -41,6 +50,7 @@ export {
   registerUser,
   authenticateUser,
   getActivities,
-  getActivityRecords,
-  getSingleActivityRecord,
+  createRecord,
+  getRecords,
+  getRecord,
 };
