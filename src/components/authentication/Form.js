@@ -28,13 +28,12 @@ const Form = () => {
 
   const errorCallback = ({ response }) => {
     const { status, data } = response;
-    const errorTag = (text) => <p className="mb-0 lh-1 fw-light">{text}</p>;
 
     switch (status) {
       case 500: return 'Server error';
       case 401: return 'Invalid username or password';
-      case 422: return errorTag(`${Object.keys(data)[0]} ${data[Object.keys(data)[0]][0]}`);
-      default: return errorTag('Something went wrong');
+      case 422: return `${Object.keys(data)[0]} ${data[Object.keys(data)[0]][0]}`;
+      default: return 'Something went wrong';
     }
   };
 
