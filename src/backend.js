@@ -16,6 +16,12 @@ const authenticateUser = async (user) => {
   return response;
 };
 
+const getActivity = async (id) => {
+  const response = await axios.get(`${BASE_URL}${ACTIVITY_PATH}/${id}`,
+    { headers: { Authorization: `Bearer ${authToken}` } });
+  return response;
+};
+
 const getActivities = async () => {
   const response = await axios.get(`${BASE_URL}${ACTIVITY_PATH}`, {
     headers: { Authorization: `Bearer ${authToken}` },
@@ -49,6 +55,7 @@ const getRecord = async (id) => {
 export {
   registerUser,
   authenticateUser,
+  getActivity,
   getActivities,
   createRecord,
   getRecords,
