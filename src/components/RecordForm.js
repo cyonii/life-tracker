@@ -53,7 +53,7 @@ const RecordForm = (props) => {
         </Form.Group>
 
         <Col xs={12} className="d-flex mt-2">
-          <Button type="submit" variant="primary" className="btn-sm lh-1 ms-auto">Submit</Button>
+          <Button type="submit" variant="primary" className="btn-sm fw-bold text-white py-1 lh-1 ms-auto">Add record</Button>
         </Col>
       </Row>
     </Form>
@@ -61,7 +61,7 @@ const RecordForm = (props) => {
 };
 
 RecordForm.propTypes = {
-  activity: PropTypes.instanceOf(Object).isRequired,
+  activity: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default RecordForm;
