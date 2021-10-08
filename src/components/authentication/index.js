@@ -10,7 +10,7 @@ export default function Authentication() {
   }, []);
 
   return (
-    <Container>
+    <Container data-testid="authentication">
       <Row className="justify-content-center align-items-center gy-5 gy-md-0 min-vh-100 py-5">
         <Col xs={12} md={6} lg={4} xl={3}>
           <p className="text-md-end text-muted mb-0">Welcome, human 👋</p>
