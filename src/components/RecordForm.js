@@ -1,12 +1,15 @@
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 import {
   Form, Row, Col, Button,
 } from 'react-bootstrap';
 import { createRecord } from '../backend';
+import { addRecord } from '../redux/actions';
 
 const RecordForm = (props) => {
   const { activity } = props;
+  const dispatch = useDispatch();
   const [id, name] = activity;
   const options = [];
 
@@ -27,7 +30,12 @@ const RecordForm = (props) => {
 
     toast.promise(createRecord(data), {
       pending: 'Creating record...',
-      success: 'Record created!',
+      success: {
+        render: ({ data }) => {
+          dispatch(addRecord([data.data.data]));
+          return 'Record created!';
+        },
+      },
       error: {
         render: ({ data }) => {
           const errors = data.response.data;
