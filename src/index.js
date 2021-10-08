@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import App from './components/App';
 import './assets/scss/style.scss';
 import reportWebVitals from './reportWebVitals';
+import store from './redux/store';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-    <ToastContainer position="bottom-left" theme="colored" />
+    <Provider store={store}>
+      <App />
+      <ToastContainer position="bottom-left" theme="colored" />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
