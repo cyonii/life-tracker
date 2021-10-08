@@ -1,14 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { ListGroup } from 'react-bootstrap';
 import RecordItem from '../RecordItem';
 import { getRecords } from '../../backend';
+import { addRecord } from '../../redux/actions';
 
 const Records = () => {
-  const [records, setRecords] = useState([]);
+  const records = useSelector((state) => state.records);
+  const dispatch = useDispatch();
 
   useEffect(async () => {
     await getRecords()
-      .then((res) => setRecords(res.data.data))
+      .then((res) => { dispatch(addRecord(res.data.data)); })
       .catch((err) => err);
   }, []);
 
