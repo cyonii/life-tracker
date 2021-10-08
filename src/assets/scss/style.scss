@@ -1,0 +1,78 @@
+$primary: #489fdf;
+$secondary: #67899c;
+$success: #addc91;
+
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+:root,
+html {
+  @include gradient-bg(shift-color($dark, $alert-bg-scale));
+}
+
+::placeholder {
+  font-weight: lighter;
+}
+
+a {
+  cursor: pointer;
+}
+
+a,
+.btn,
+.btn:active,
+.btn:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.form-control {
+  border-width: 1px;
+  border-color: lighten($primary, 15%);
+
+  &:focus {
+    border-color: $primary;
+  }
+}
+
+#dashboard-nav {
+  .nav-link {
+    padding-right: 0.25rem !important;
+    padding-left: 0.25rem !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1;
+    background-color: $dark;
+    color: $text-muted;
+    border-radius: 0 !important;
+    position: relative;
+
+    &.active {
+      background-color: $primary;
+      color: $white;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid $white;
+      }
+    }
+  }
+}
+
+// Toastify
+.Toastify * {
+  line-height: 1;
+  font-weight: lighter;
+  font-size: 15px;
+}
