@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabContent should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="tab-content"
+    data-testid="tab-content"
+  >
+    <div
+      class="tab-pane"
+    >
+      <h3
+        class="h4 bg-primary text-center text-white py-2"
+      >
+        Add record
+      </h3>
+      <div
+        class="container"
+      />
+    </div>
+    <div
+      class="tab-pane"
+    >
+      <h3
+        class="h4 bg-primary text-center text-white py-2"
+      >
+        Track.it
+      </h3>
+      <div
+        class="container"
+      >
+        <div
+          class="p-0 list-group list-group-flush"
+        />
+      </div>
+    </div>
+    <div
+      class="tab-pane"
+    >
+      <h3
+        class="h4 bg-primary text-center text-white py-2"
+      >
+        Progress report
+      </h3>
+      <div
+        class="container"
+      >
+        <h2
+          class="text-muted"
+        >
+          Your Progress so far
+        </h2>
+      </div>
+    </div>
+    <div
+      class="tab-pane"
+    >
+      <h3
+        class="h4 bg-primary text-center text-white py-2"
+      >
+        More
+      </h3>
+      <div>
+        <div
+          class="list-group list-group-flush"
+        >
+          <div
+            class="list-group-item"
+          >
+            <button
+              class="w-100 rounded-0 btn btn-light"
+              disabled=""
+              type="button"
+            >
+              Profile
+            </button>
+            <button
+              class="w-100 rounded-0 btn btn-danger"
+              type="button"
+            >
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

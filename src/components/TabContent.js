@@ -13,7 +13,7 @@ const TabContent = () => {
   );
 
   return (
-    <Tab.Content>
+    <Tab.Content data-testid="tab-content">
       {pane('add-record', 'Add record', <AddRecord />)}
       {pane('records', 'Track.it', <Records />)}
       {pane('progress-report', 'Progress report', <ProgressReport />)}

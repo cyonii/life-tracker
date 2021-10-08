@@ -15,7 +15,7 @@ const RecordItem = (props) => {
   }, []);
 
   return (
-    <ListGroup.Item key={record.id}>
+    <ListGroup.Item key={record.id} data-testid="record-item">
       {record.attributes.date}
       <br />
       <Badge variant="info" className="px-3 rounded-0">{activity.attributes.name}</Badge>

@@ -46,7 +46,7 @@ const RecordForm = (props) => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} data-testid="record-form">
       <Row className="bg-light py-2 mb-2 gx-3" key={name.toLowerCase()}>
         <h6 className="lh-1">{name}</h6>
 

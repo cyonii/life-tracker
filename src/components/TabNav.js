@@ -11,7 +11,7 @@ const TabNav = () => {
   );
 
   return (
-    <Nav fill variant="pills" justify id="dashboard-nav" className="mt-auto">
+    <Nav fill variant="pills" justify id="dashboard-nav" className="mt-auto" data-testid="tab-nav">
       {navItem('add-record', 'Add record.', 'bi-plus-circle-fill')}
       {navItem('records', 'Track.it', 'bi-graph-up')}
       {navItem('progress-report', 'Your progress', 'bi-pie-chart-fill')}
